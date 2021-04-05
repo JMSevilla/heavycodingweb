@@ -60,4 +60,4 @@
 </div>
 
 <button class="btn btn-primary" onclick="onregister()" style="float:right; margin-bottom: 10px;">Register</button>
-<button class="btn btn-primary" style="float:right; margin-bottom: 10px; margin-right: 10px;">Already have an account?</button>
+<button class="btn btn-primary" onclick="navigatesignin()" style="float:right; margin-bottom: 10px; margin-right: 10px;">Already have an account?</button>

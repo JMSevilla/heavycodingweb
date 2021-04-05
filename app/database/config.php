@@ -7,7 +7,7 @@ class database {
     private $databasename = "dbheavy";
     private $stmt;
     private $mapper;
-
+    
     public function __construct() { 
         try 
         {
@@ -21,8 +21,24 @@ class database {
         }
     }
 
+    public function selectiondata($sqlquery) {
+        return $this->__construct()->query($sqlquery);
+    }
+
     public function querystring($sql) { 
         return $this->stmt = $this->__construct()->prepare($sql);
+    }
+    public function dataCount(){
+        return $this->stmt->rowCount() > 0;
+    }
+    public function datafetching(){ 
+        return $this->stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    // public function whileloop($datarow, $dataresult) { 
+    //     return $datarow = $dataresult->fetch(PDO::FETCH_ASSOC);
+    // }
+    public function passworddecryptor($normalpass, $hashedpass){ 
+        return password_verify($normalpass, $hashedpass);
     }
     public function bind($param, $val, $type = null) { 
         if(is_null($type)) 

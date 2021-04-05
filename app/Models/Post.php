@@ -14,6 +14,30 @@ class post_Models extends postControllerData {
         ];
         $this->postWall($data);
     }
+    public function signinModel() {
+        $credentials = [
+            'sign1' => $_POST['signin1'],
+            'sign2' => $_POST['signin2']
+        ];
+        $this->signincontroller($credentials);
+    }
+    public function insertModel() {
+        $datainsert = ['data1' => $_POST['data1']];
+        $this->insertcontroller($datainsert);
+    }
+    public function deletionModel() { 
+        $this->deletionController($_POST['id']);
+    }
+    public function updateselection(){ 
+        $this->updateselectController($_POST['id']);
+    }
+    public function finalUpModels() {
+        $data = [
+          'data1' => $_POST['data1'],
+          'id' => $_POST['id']
+        ];
+        $this->finalUpController($data);
+    }
 }
 
 function route_controller() { 
